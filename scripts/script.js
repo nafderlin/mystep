@@ -1,6 +1,6 @@
 const CONFIG = {
   TELEGRAM_BOT_TOKEN: "8613915198:AAGF1gIcGCWmbbeS7yxHNFbRMgp1sXAPbe0",
-  TELEGRAM_CHAT_ID: "282412631",
+  TELEGRAM_CHAT_ID: ["282412631", "7897913022"],
   GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxXC7fFPXF5g-Z2Ly9aGCAzhjK-fjKq83kG2UuTdT8-gX6ub1WrY4wgA_WKRvZ-iEX_Vg/exec", 
 };
 
@@ -99,7 +99,6 @@ async function sendToGoogleSheets(d) {
     await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: d.name,
         phone: "+998 " + d.phone,
