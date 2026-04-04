@@ -64,29 +64,31 @@ function validateForm() {
 // Send to Telegram
 async function sendToTelegram(d) {
   const msg =
-    `🆕 *Новая заявка — MyStep*\n\n` +
-    `👤 *Имя:* ${d.name}\n` +
-    `📱 *Телефон:* +998 ${d.phone}\n` +
-    `📚 *Курс:* ${d.course}\n` +
-    `🎂 *Возраст:* ${d.age || "—"}\n` +
-    `⏰ *Удобное время:* ${d.callTime || "—"}\n` +
-    `🌐 *Источник:* ${d.source}\n` +
-    `📅 *Дата:* ${d.date}`;
+    `New application - MyStep\n\n` +
+    `Name: ${d.name}\n` +
+    `Phone: +998 ${d.phone}\n` +
+    `Course: ${d.course}\n` +
+    `Age: ${d.age || "not specified"}\n` +
+    `Call time: ${d.callTime || "not specified"}\n` +
+    `Source: ${d.source}\n` +
+    `Date: ${d.date}`;
   try {
-    const r = await fetch(
-      `https://api.telegram.org/bot${CONFIG.TELEGRAM_BOT_TOKEN}/sendMessage`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: CONFIG.TELEGRAM_CHAT_ID,
-          text: msg,
-        }),
-      },
-    );
-    const result = await r.json();
-    console.log("TG response:", result);
-    return r.ok;
+    for (const id of CONFIG.TELEGRAM_CHAT_ID) {
+      const r = await fetch(
+        `https://api.telegram.org/bot${CONFIG.TELEGRAM_BOT_TOKEN}/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: id,
+            text: msg,
+          }),
+        },
+      );
+      const result = await r.json();
+      console.log(`TG response for ${id}:`, result);
+    }
+    return true;
   } catch (e) {
     console.error("TG err:", e);
     return false;
