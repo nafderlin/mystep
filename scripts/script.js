@@ -1,7 +1,7 @@
 const CONFIG = {
-  TELEGRAM_BOT_TOKEN: "8613915198:AAGF1gIcGCWmbbeS7yxHNFbRMgp1sXAPbe0",
+  TELEGRAM_BOT_TOKEN: "8517346899:AAEeB1YUebeCuzJjBGmR5p3LOGgQARy1I3c",
   TELEGRAM_CHAT_ID: ["282412631", "7897913022"],
-  GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxyPMf2IR5M2bU7iajo81Fm-jqdZF8EzQzoHu6o4DeNBUEZDVfpINv4eufZF2_DjO8KVQ/exec", 
+  GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbypM0HY18JwFBVht5Kt7kT2BTQ-37TND3WZlRwNohsN_Hq20u3Xvg_BkyyUloD12yNP/exec", 
 };
 
 // Header scroll
