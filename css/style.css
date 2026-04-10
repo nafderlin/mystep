@@ -80,6 +80,26 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lang-switcher {
+  border: 1.5px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+.lang-switcher:focus {
+  box-shadow: 0 0 0 3px rgba(26, 58, 107, 0.1);
+}
 .logo {
   display: flex;
   align-items: center;
