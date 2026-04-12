@@ -103,13 +103,13 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   text-decoration: none;
 }
 .logo-icon {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  background: #00000000;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -143,6 +143,9 @@ body {
   100% {
     transform: translateX(100%) rotate(45deg);
   }
+}
+.logo-icon img {
+  width: 44px;
 }
 .logo-text {
   font-family: "Montserrat", sans-serif;
