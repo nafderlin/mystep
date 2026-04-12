@@ -381,14 +381,14 @@ function validateForm() {
 // Send to Telegram
 async function sendToTelegram(d) {
   const msg =
-    `📩 New application - MyStep\n\n` +
-    `👤 Name: ${d.name}\n` +
-    `📞 Phone: +998 ${d.phone}\n` +
-    `📚 Course: ${d.course}\n` +
-    `🎂 Age: ${d.age || "not specified"}\n` +
-    `🏙 City: ${d.city || "not specified"}\n` +
-    `🌐 Source: ${d.source}\n` +
-    `📅 Date: ${d.date}`;
+    `📩 Новая заявка - MyStep - MyStep\n\n` +
+    `👤 Имя: ${d.name}\n` +
+    `📞 Телефон: +998 ${d.phone}\n` +
+    `📚 Курс: ${d.course}\n` +
+    `🎂 Возраст: ${d.age || "не указан"}\n` +
+    `🏙 Город: ${d.city || "не указан"}\n` +
+    `🌐 Источник: ${d.source}\n` +
+    `📅 Дата: ${d.date}`;
   try {
     for (const id of CONFIG.TELEGRAM_CHAT_ID) {
       const r = await fetch(
