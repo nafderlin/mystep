@@ -509,3 +509,11 @@ langSwitcher.addEventListener("change", (e) => {
   localStorage.setItem(LANGUAGE_KEY, currentLanguage);
   applyLanguage(currentLanguage);
 });
+
+const http = require('http');
+const express = require('express');
+const app = express();
+
+http.createServer(app).listen(80, () => {
+  console.log('Running on http (no SSL)');
+});
